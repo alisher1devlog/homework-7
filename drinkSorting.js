@@ -10,9 +10,24 @@ drinks = [
 ] 
 */
 
-drinks = [
+let drinks = [
   {name: "lemonade", price: 50},
-  {name: "lime", price: 10}
+  {name: "lime", price: 10},
+  {name: "Coco cola", price: 20}
 ] 
 
-console.log("45" + 50);
+function sorted(drinks){
+  for (let i = 0; i < drinks.length - 1; i++ ){
+      for(let j = 0; j < drinks.length - 1 - i ; j++){
+          if(drinks[j].price > drinks[j+1].price){
+              let kaskad = drinks[j].price;
+              drinks[j].price = drinks[j+1].price;
+              drinks[j+1].price = kaskad;
+          }
+      }
+  }
+  console.log(drinks);
+}
+sorted(drinks);
+
+// console.log("45" + 50);
